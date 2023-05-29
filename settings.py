@@ -5,6 +5,9 @@ MAX_ROWS_PER_PAGE = 50
 
 # VISUALIZER_CMDS = ['next', 'prev', 'end', 'q', 'open']
 
+DISCORD_APPS_ENDPOINT = "https://discord.com/api/applications/detectable"
+USER_DATA_FILE = "account/user.json"
+
 DEFAULT_BASE_DIR = "./package"
 
 TYPE_CHANNEL_GUILD = 0

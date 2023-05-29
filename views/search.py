@@ -31,7 +31,7 @@ class SearchView(pageable.Pageable):
         message_id = "".join(args)
 
         if message_id and self._pageable_df is not None:
-            if message_id in self._pageable_df.index:
+            if message_id in self._pageable_df["MessageID"]:
                 target_message = self._pageable_df.loc[message_id]
 
                 print(f"\nTimestamp: {target_message['Timestamp']}")

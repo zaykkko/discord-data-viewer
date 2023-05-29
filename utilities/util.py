@@ -5,6 +5,13 @@ from typing import Any
 import settings
 
 
+def get_base_dir(base_dir: str) -> str:
+    if not os.path.isabs(base_dir):
+        return os.path.join(os.getcwd(), os.path.normpath(base_dir.replace("/", "\\")))
+
+    return base_dir
+
+
 def load_json(json_path: str) -> Any:
     with open(json_path, encoding="utf8") as json_data:
         return json.load(json_data)

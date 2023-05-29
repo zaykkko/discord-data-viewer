@@ -11,12 +11,7 @@ class ChannelsView(pageable.Pageable):
     def __init__(self, base_dir: str):
         super().__init__()
 
-        if not os.path.isabs(base_dir):
-            base_dir = os.path.join(
-                os.getcwd(), os.path.normpath(base_dir.replace("/", "\\"))
-            )
-
-        self._base_dir = base_dir
+        self._base_dir = util.get_base_dir(base_dir)
         self._msgs_view = MessagesView(self._base_dir)
 
         msgs_index_path = os.path.join(
